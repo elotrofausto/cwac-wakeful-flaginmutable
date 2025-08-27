@@ -78,7 +78,7 @@ abstract public class WakefulIntentService extends IntentService {
     AlarmManager mgr=
         (AlarmManager)ctxt.getSystemService(Context.ALARM_SERVICE);
     Intent i=new Intent(ctxt, AlarmReceiver.class);
-    PendingIntent pi=PendingIntent.getBroadcast(ctxt, 0, i, 0);
+    PendingIntent pi=PendingIntent.getBroadcast(ctxt, 0, i, 0, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
 
     mgr.cancel(pi);
 
